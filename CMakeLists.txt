@@ -832,7 +832,7 @@ message(STATUS "Enabled JWT backend: ${ZM_JWT_BACKEND}")
 
 # Run ZM configuration generator
 message(STATUS "Running ZoneMinder configuration generator")
-execute_process(COMMAND perl ${CMAKE_CURRENT_BINARY_DIR}/zmconfgen.pl RESULT_VARIABLE ZMCONFGEN_RESULT)
+execute_process(COMMAND ${PERL_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/zmconfgen.pl RESULT_VARIABLE ZMCONFGEN_RESULT)
 if(ZMCONFGEN_RESULT EQUAL 0)
   message(STATUS "ZoneMinder configuration generator completed successfully")
 else()
